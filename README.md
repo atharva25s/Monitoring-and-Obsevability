@@ -1,17 +1,18 @@
 # Monitoring and Observability
 
-# Overview
+## Overview
 - Using monitoring tools like **Prometheus, Grafana and Grafana Loki** to monitor the health of the servers.
 - The servers are uvicorn servers created with **FastAPI**
 - The architecture looks like this:
+![Architecture](assets/arch.png)
 
 
-# Prerequisites
+## Prerequisites
 - As shown in the figure, you will require minimum two nodes, out of which one node will be the *Monitoring Server* and rest would be *Server-emulators*.
 - Knowledge about Docker containers, images, docker-compose and ports-mapping.
 - Knowledge about IPv4 address networking.
 
-# Server-emulator Setup
+## Server-emulator Setup
 - I have already created a docker image of my server emulator so you can just pull the image.
 ```bash
 docker pull atharva25s/server-emulator:latest
@@ -55,7 +56,7 @@ docker restart <container_name>
 
 - Now based on how much servers you want these aforementioned instructions can be multiplied.
 
-# Watch-server setup
+## Watch-server setup
 - Copy the files from [Watch-Server directory](Watch-Server) into the root directory of your monitoring server.
 
 - Edit the **prometheus.yml**
@@ -70,7 +71,7 @@ nano prometheus.yml
 docker-compose up
 ```
 
-# Grafana Dashboard
+## Grafana Dashboard
 - Go onto the Grafana login with
     - Username: admin
     - Password: admin
@@ -80,6 +81,6 @@ http://<PUBLIC_IP_MONITORING_SERVER>:3000
 - Setup your datasources
 - And then you can create your dashboard.
 
-# Here's a video of the end results
-[![Monitoring & Observability with Prometheus, Grafana & Loki](assets\Grafana.png)](https://youtu.be/ZgnwUhjTIro)
+### Here's a video of the end results
+[![Monitoring & Observability with Prometheus, Grafana & Loki](assets/Grafana.png)](https://youtu.be/ZgnwUhjTIro)
 
