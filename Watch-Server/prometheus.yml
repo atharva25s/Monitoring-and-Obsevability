@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 7s
+
+scrape_configs:
+  - job_name: 'fastapi_emulator_1'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['<PUBLIC_IP_EMULATOR_1>:8000']
+
+  - job_name: 'fastapi_emulator_2'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['<PUBLIC_IP_EMULATOR_2>:8000']
+
+## Do not put 'http://' inside targets      
